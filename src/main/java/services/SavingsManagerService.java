@@ -9,7 +9,6 @@ import java.util.List;
 
 public class SavingsManagerService {
     private LocalDate systemDate = LocalDate.now();
-    private LocalDate systemDateQuarterly = LocalDate.now();
 
     public void passTime() {
         List<SavingsAccountModel> savingAccounts = AccountsRepository.INSTANCE.getAll().stream()
@@ -17,18 +16,16 @@ public class SavingsManagerService {
                 .map(account -> (SavingsAccountModel) account).toList();
 
         LocalDate nextSystemDate = systemDate.plusMonths(1);
-        LocalDate nextSystemDateQuarterly = systemDateQuarterly.plusMonths(3);
 
         savingAccounts.forEach(savingAccount -> {
             if (savingAccount.getInterestFrequency() == CapitalizationFrequency.MONTHLY) {
                 addMonthlyInterest(savingAccount, nextSystemDate);
             } else if (savingAccount.getInterestFrequency() == CapitalizationFrequency.QUARTERLY) {
-                addQuarterlyInterest(savingAccount, nextSystemDateQuarterly);
+                addQuarterlyInterest(savingAccount, nextSystemDate);
             }
         });
 
         systemDate = nextSystemDate;
-        systemDateQuarterly =  nextSystemDateQuarterly;
     }
 
     private void addMonthlyInterest(SavingsAccountModel savingAccount, LocalDate currentInterestMonth) {

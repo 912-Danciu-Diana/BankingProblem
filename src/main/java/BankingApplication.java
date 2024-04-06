@@ -49,6 +49,8 @@ public class BankingApplication {
 
         // SAVINGS MANAGER FUNCTIONALITY
 
+        // MONTHLY AND QUARTERLY INTERESTS
+
         System.out.println("[Saving Manager] 1. " + transactionManagerServiceInstance.checkFunds(savingsAccountA.getId()));
         System.out.println("[Saving Manager] 2. " + transactionManagerServiceInstance.checkFunds(savingsAccountB.getId()));
 
@@ -59,6 +61,16 @@ public class BankingApplication {
         savingsManagerServiceInstance.passTime();
         System.out.println("[Saving Manager] 5. " + transactionManagerServiceInstance.checkFunds(savingsAccountA.getId()));
         System.out.println("[Saving Manager] 6. " + transactionManagerServiceInstance.checkFunds(savingsAccountB.getId()));
+
+        savingsManagerServiceInstance.passTime();
+        System.out.println("[Saving Manager] 7. " + transactionManagerServiceInstance.checkFunds(savingsAccountB.getId()));
+
+        // QUARTERLY INTEREST
+
+        savingsManagerServiceInstance.passTime();
+        savingsManagerServiceInstance.passTime();
+        savingsManagerServiceInstance.passTime();
+        System.out.println("[Saving Manager] 8. " + transactionManagerServiceInstance.checkFunds(savingsAccountB.getId()));
 
         System.out.println("\n[SYSTEM] Application closed\n");
     }

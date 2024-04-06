@@ -149,7 +149,7 @@ public class BankingApplicationTest {
     }
 
     @Test
-    public void applyMonthlyInterestToSavingsAccount() {
+    public void addMonthlyInterest() {
         AccountsRepository.INSTANCE.add(savingsAccountA.getId(), savingsAccountA);
 
         double expectedInterest = savingsAccountA.getBalance().getAmount() * savingsAccountA.getInterest();
@@ -165,13 +165,16 @@ public class BankingApplicationTest {
     }
 
     @Test
-    public void applyQuarterlyInterestToSavingsAccount() {
+    public void addQuarterlyInterest() {
         AccountsRepository.INSTANCE.add(savingsAccountB.getId(), savingsAccountB);
 
         double expectedInterest = savingsAccountB.getBalance().getAmount() * savingsAccountB.getInterest();
         double expectedBalance = savingsAccountB.getBalance().getAmount() + expectedInterest;
 
         savingsManagerService.passTime();
+        savingsManagerService.passTime();
+        savingsManagerService.passTime();
+
 
         AccountModel updatedAccount = AccountsRepository.INSTANCE.get(savingsAccountB.getId());
         assertEquals("The balance should be updated with monthly interest",
