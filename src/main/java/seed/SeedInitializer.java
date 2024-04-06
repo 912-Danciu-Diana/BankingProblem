@@ -1,23 +1,16 @@
-package seed;
+package main.java.seed;
 
-import repository.AccountsRepository;
-
-import static seed.AccountsSeedData.checkingAccountA;
-import static seed.AccountsSeedData.checkingAccountB;
-import static seed.AccountsSeedData.checkingAccountC;
-import static seed.AccountsSeedData.checkingAccountD;
-import static seed.AccountsSeedData.savingsAccountA;
-import static seed.AccountsSeedData.savingsAccountB;
+import main.java.repository.AccountsRepository;
 
 public class SeedInitializer {
 
     public static void seedData() {
         System.out.println("[Seeder] -------------Seeding data----------------\n");
-        AccountsRepository.INSTANCE.add(savingsAccountA.getId(), savingsAccountA);
-        AccountsRepository.INSTANCE.add(savingsAccountB.getId(), savingsAccountB);
-        AccountsRepository.INSTANCE.add(checkingAccountA.getId(), checkingAccountA);
-        AccountsRepository.INSTANCE.add(checkingAccountB.getId(), checkingAccountB);
-        AccountsRepository.INSTANCE.add(checkingAccountC.getId(), checkingAccountC);
-        AccountsRepository.INSTANCE.add(checkingAccountD.getId(), checkingAccountD);
+        AccountsRepository.INSTANCE.add(AccountsSeedData.savingsAccountA.getId(), AccountsSeedData.savingsAccountA);
+        AccountsRepository.INSTANCE.add(AccountsSeedData.savingsAccountB.getId(), AccountsSeedData.savingsAccountB);
+        AccountsRepository.INSTANCE.add(AccountsSeedData.checkingAccountA.getId(), AccountsSeedData.checkingAccountA);
+        AccountsRepository.INSTANCE.add(AccountsSeedData.checkingAccountB.getId(), AccountsSeedData.checkingAccountB);
+        AccountsRepository.INSTANCE.add(AccountsSeedData.checkingAccountC.getId(), AccountsSeedData.checkingAccountC);
+        AccountsRepository.INSTANCE.add(AccountsSeedData.checkingAccountD.getId(), AccountsSeedData.checkingAccountD);
     }
 }

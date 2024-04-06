@@ -1,14 +1,13 @@
-import domain.CurrencyType;
-import domain.MoneyModel;
-import domain.TransactionModel;
-import seed.SeedInitializer;
-import services.SavingsManagerService;
-import services.TransactionManagerService;
+package main.java;
 
-import static seed.AccountsSeedData.checkingAccountA;
-import static seed.AccountsSeedData.checkingAccountB;
-import static seed.AccountsSeedData.savingsAccountA;
-import static seed.AccountsSeedData.savingsAccountB;
+import main.java.domain.CurrencyType;
+import main.java.domain.MoneyModel;
+import main.java.domain.TransactionModel;
+import main.java.seed.SeedInitializer;
+import main.java.services.SavingsManagerService;
+import main.java.services.TransactionManagerService;
+
+import static main.java.seed.AccountsSeedData.*;
 
 public class BankingApplication {
 
@@ -35,27 +34,31 @@ public class BankingApplication {
         System.out.println("[Transaction Manager] 4. " + transactionManagerServiceInstance.checkFunds(checkingAccountA.getId()));
         System.out.println("[Transaction Manager] 5. " + transactionManagerServiceInstance.checkFunds(checkingAccountB.getId()));
 
-        // Uncomment the following lines if the withdrawal method is available in the TransactionManagerService
-        // System.out.println("[Transaction Manager] 6. " +
-        //         TransactionManagerServiceInstance.withdraw(
-        //                 checkingAccountC.getId(),
-        //                 new MoneyModel(5, CurrencyType.EUR)
-        //         )
-        // );
+        System.out.println("[Transaction Manager] 6. " + transactionManagerServiceInstance.checkFunds(checkingAccountC.getId()));
+
+        System.out.println("[Transaction Manager] 7. " +
+                 transactionManagerServiceInstance.withdraw(
+                         checkingAccountC.getId(),
+                         new MoneyModel(5, CurrencyType.EUR)
+                 )
+        );
+
+        System.out.println("[Transaction Manager] 8. " + transactionManagerServiceInstance.checkFunds(checkingAccountC.getId()));
 
         System.out.println("\n------------------------------------\n");
 
         // SAVINGS MANAGER FUNCTIONALITY
 
         System.out.println("[Saving Manager] 1. " + transactionManagerServiceInstance.checkFunds(savingsAccountA.getId()));
-
-        savingsManagerServiceInstance.passTime();
-        System.out.println("[Saving Manager] 2. " + transactionManagerServiceInstance.checkFunds(savingsAccountA.getId()));
+        System.out.println("[Saving Manager] 2. " + transactionManagerServiceInstance.checkFunds(savingsAccountB.getId()));
 
         savingsManagerServiceInstance.passTime();
         System.out.println("[Saving Manager] 3. " + transactionManagerServiceInstance.checkFunds(savingsAccountA.getId()));
         System.out.println("[Saving Manager] 4. " + transactionManagerServiceInstance.checkFunds(savingsAccountB.getId()));
-        System.out.println("[Saving Manager] 5. " + transactionManagerServiceInstance.checkFunds(checkingAccountA.getId()));
+
+        savingsManagerServiceInstance.passTime();
+        System.out.println("[Saving Manager] 5. " + transactionManagerServiceInstance.checkFunds(savingsAccountA.getId()));
+        System.out.println("[Saving Manager] 6. " + transactionManagerServiceInstance.checkFunds(savingsAccountB.getId()));
 
         System.out.println("\n[SYSTEM] Application closed\n");
     }

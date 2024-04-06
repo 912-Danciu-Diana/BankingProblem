@@ -1,4 +1,4 @@
-package domain;
+package main.java.domain;
 
 public class InterestRate {
     public static final double ONE_MONTH_ACCOUNT = 0.0475;

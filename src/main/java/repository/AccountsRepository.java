@@ -1,6 +1,6 @@
-package repository;
+package main.java.repository;
 
-import domain.AccountModel;
+import main.java.domain.AccountModel;
 
 public class AccountsRepository {
     public static final InMemoryDatabase<AccountModel> INSTANCE = new InMemoryDatabase<>();

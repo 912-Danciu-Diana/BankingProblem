@@ -1,19 +1,19 @@
-package seed;
+package main.java.seed;
 
-import domain.CapitalizationFrequency;
-import domain.CheckingAccountModel;
-import domain.CurrencyType;
-import domain.InterestRate;
-import domain.MoneyModel;
-import domain.SavingsAccountModel;
+import main.java.domain.CapitalizationFrequency;
+import main.java.domain.CheckingAccountModel;
+import main.java.domain.CurrencyType;
+import main.java.domain.InterestRate;
+import main.java.domain.MoneyModel;
+import main.java.domain.SavingsAccountModel;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import static seed.CardsSeedData.card1;
-import static seed.CardsSeedData.card2;
-import static seed.CardsSeedData.card3;
-import static seed.CardsSeedData.card4;
+import static main.java.seed.CardsSeedData.card1;
+import static main.java.seed.CardsSeedData.card2;
+import static main.java.seed.CardsSeedData.card3;
+import static main.java.seed.CardsSeedData.card4;
 
 public class AccountsSeedData {
 

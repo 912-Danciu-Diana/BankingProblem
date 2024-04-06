@@ -1,4 +1,4 @@
-package domain;
+package main.java.domain;
 
 public enum CapitalizationFrequency {
     MONTHLY,

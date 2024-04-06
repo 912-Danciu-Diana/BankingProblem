@@ -19,11 +19,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>4.0.0</version>
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>BankingApplication</mainClass>
+                            <mainClass>main.java.BankingApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

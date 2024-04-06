@@ -1,7 +1,7 @@
-package utils;
+package main.java.utils;
 
-import domain.CurrencyType;
-import domain.MoneyModel;
+import main.java.domain.CurrencyType;
+import main.java.domain.MoneyModel;
 
 public class MoneyUtils {
 

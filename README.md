@@ -26,7 +26,7 @@ java -jar target/your-application.jar
 where ```your-aplication.jar ``` is the jar file created after installing the dependencies in the previous step.
 
 You can also open the project as a maven project in an IDE (Intellij for example) and run the application there using the Run Configurations.
-- The application's main file is located at `/src/main/java/BankingApplication.java`.
+- The application's main file is located at `/src/main/java/main.java.BankingApplication.java`.
 
 ## Business Preconditions
 

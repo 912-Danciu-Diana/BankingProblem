@@ -1,6 +1,6 @@
-package seed;
+package main.java.seed;
 
-import domain.CardModel;
+import main.java.domain.CardModel;
 
 import java.time.LocalDate;
 
