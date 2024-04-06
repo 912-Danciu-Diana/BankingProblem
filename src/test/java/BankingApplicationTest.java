@@ -175,7 +175,6 @@ public class BankingApplicationTest {
         savingsManagerService.passTime();
         savingsManagerService.passTime();
 
-
         AccountModel updatedAccount = AccountsRepository.INSTANCE.get(savingsAccountB.getId());
         assertEquals("The balance should be updated with monthly interest",
                 expectedBalance,
